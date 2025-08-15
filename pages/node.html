@@ -1,0 +1,191 @@
+<div class="node-container page-container">
+    <h2>NPM</h2>
+    <br>
+    npm init -y<br>
+    <div class="remark-with-margin-left">
+        You could also write "npm init" and then you have to enter to set every json variable.  The "-y" does it automatically.
+    </div>
+    <div class="problem-with-margin-left" ondblclick="openAndClose(event)">
+        <div class="problem-title">problem</div>
+        <div class="problem-container closed">
+            <div class="problem-info">
+                npm : The term 'npm' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, 
+                verify that the path is correct and try again.<br>
+                At line:1 char:1<br>
+                + npm init -y<br>
+                + ~~~<br>
+                    + CategoryInfo          : ObjectNotFound: (npm:String) [], CommandNotFoundException<br>
+                    + FullyQualifiedErrorId : CommandNotFoundException
+            </div>
+            <hr>
+            <div class="problem-solution">
+                Node.js wasn't downloaded (https://nodejs.org/en/download/)<br>
+                Checking the versions:<br>
+                C:\Users\Jan>node -v<br>
+                v22.14.0<br>
+                C:\Users\Jan><br>
+                C:\Users\Jan>npm -v<br>
+                10.9.2
+            </div>
+        </div>
+    </div>
+    <div class="problem-with-margin-left" ondblclick="openAndClose(event)">
+        <div class="problem-title">problem</div>
+        <div class="problem-container closed">
+            <div class="problem-info">
+                npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at h
+                ttps:/go.microsoft.com/fwlink/?LinkID=135170.<br>
+                At line:1 char:1<br>
+                + npm init -y<br>
+                + ~~~<br>
+                    + CategoryInfo          : SecurityError: (:) [], PSSecurityException<br>
+                    + FullyQualifiedErrorId : UnauthorizedAccess<br>              
+            </div>
+            <hr>
+            <div class="problem-solution">
+                <a href="https://stackoverflow.com/questions/78450758/npm-file-c-program-files-nodejs-npm-ps1-cannot-be-loaded-because-running-scri
+                " target="_blank">&#x1F517; StackOverflow</a><br>
+                Do the folowwing<br>
+            <br>
+        
+                PS D:\Coding\TestReactNodeMySQL\server>  Get-ExecutionPolicy <br>
+                Restricted<br>
+                PS D:\Coding\TestReactNodeMySQL\server> Set-ExecutionPolicy -Scope CurrentUser<br>
+                cmdlet Set-ExecutionPolicy at command pipeline position 1<br>
+                Supply values for the following parameters:<br>
+                ExecutionPolicy: RemoteSigned<br>
+            
+            </div>
+        </div>
+    </div>
+    <div class="response-with-margin-left">
+        Wrote to D:\Coding\TestReactNodeMySQL\server\package.json:<br>
+
+        {<br>
+        "name": "server",<br>
+        "version": "1.0.0",<br>
+        "main": "index.js",<br>
+        "scripts": {<br>
+            "test": "echo \"Error: no test specified\" && exit 1"<br>
+        },<br>
+        "keywords": [],<br>
+        "author": "",<br>
+        "license": "ISC",<br>
+        "description": ""<br>
+        }<br>
+    </div>
+    npm install express mysql cors nodemon
+    <div class="response-with-margin-left">
+        added 107 packages, and audited 108 packages in 12s<br>
+
+        18 packages are looking for funding<br>
+            run `npm fund` for details<br>
+        
+        found 0 vulnerabilities<br>
+    </div>
+
+</div>
+
+<div class="react-container page-container">
+    <h2>Modifications after npm-init</h2>
+    <br>
+    After <b>npm init</b> a <b>package.json</b> file is created.<br>
+    It gives <b>index.js</b> as <b>main</b><br>
+    This file, <b>index.js</b>, needs to be created in the server folder.
+</div>
+
+<div class="react-container page-container">
+    <h2>Start server</h2>
+    <br>
+    <b><u>Write script in CL; run it every time to refresh the server</u></b>
+    <br>
+    cd server<br>
+    node index.js<br>
+    <br>
+    <b><u>Save script and call it in CL; run it every time to refresh the server</u></b>
+    <br>
+    add a line in <b>scripts</b> in the file <b>server > package.json</b><br>
+    <br>
+    "scripts": {<br>
+        "test": "echo \"Error: no test specified\" && exit 1"<br>
+        },<br>
+    <br>
+    "scripts": {<br>
+        "start": "node index.js",<br>
+        "test": "echo \"Error: no test specified\" && exit 1"<br>
+        },<br>
+    <br>
+    cd server <br>
+    npm run start <br>
+    <br>
+    <b><u>Save nodemon script: call it once in CL and refresh the server by refreshing the browser</u></b>
+    <br>
+    add a line in <b>scripts</b> in the file <b>server > package.json</b><br>
+    <br>
+    "scripts": {<br>
+        "start": "node index.js",<br>
+        "test": "echo \"Error: no test specified\" && exit 1"<br>
+        },<br>
+    <br>
+    <br>
+    "scripts": {<br>
+        "start": "node index.js",<br>
+        "devStart": "nodemon index.js",<br>
+        "test": "echo \"Error: no test specified\" && exit 1"<br>
+        },<br>
+    <br>
+    cd server <br>
+    npm run devStart <br>
+    <br>
+
+</div> 
+
+<div class="node-container page-container">
+    <h2>Dependencies (NPM Packages)</h2>
+    <div class="remark">All the dependecies are listed in the <b>package.json</b></div>
+    <br>
+    
+    
+    <h3>BodyParser</h3>
+    
+
+
+
+    <h3>CORS</h3>
+    <a href="https://medium.com/@vitaliykorzenkoua/understanding-cors-in-node-js-ea2fcf68177c
+    " target="_blank">&#x1F517; Medium</a><br>
+    <b><u>What is CORS?</u></b><br>
+
+    Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any 
+    origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. 
+    CORS also relies on a mechanism by which browsers make a “preflight” request to the server hosting the 
+    cross-origin resource, in order to check that the server will permit the actual request. In that preflight, 
+    the browser sends headers that indicate the HTTP method and headers that will be used in the actual request.<br>
+    <br>
+    <b><u>How Does CORS Work?</u></b><br>
+
+    When a frontend makes a cross-origin request, the browser first sends a preflight request (an HTTP OPTIONS 
+    request) to the server. This request checks if the server allows the original request (e.g., a POST request 
+    with certain headers) from the origin domain. If the server responds with the correct CORS headers, the browser 
+    allows the request; otherwise, it blocks the request.<br>
+    <br>
+    <b><u>Common CORS headers include:</u></b><br>
+
+    Access-Control-Allow-Origin: Specifies which origins are allowed to access the resource.<br>
+    Access-Control-Allow-Methods: Specifies the HTTP methods (e.g., GET, POST, PUT) allowed from that origin.<br>
+    Access-Control-Allow-Headers: Specifies which headers are allowed in the request (e.g., Authorization, Content-Type).<br>
+    <br>
+    <h3>Express</h3>
+    Express is a backend Node framework for creating API's. Basically for creating a server and ways to communicate with your server.<br>
+    <br>
+    <h3>MySQL</h3>
+    https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server<br>
+    <br>
+    <h3>Nodemon</h3>
+    Nodemon is a command-line tool that helps with the speedy development of Node. js applications. It monitors 
+    your project directory and automatically restarts your node application when it detects any changes. This means 
+    that you do not have to stop and restart your applications in order for your changes to take effect<br>
+    <br>
+    It needs to be configured (see at <b>Start server</b>)
+</div>
+

@@ -1,0 +1,5 @@
+# Ignore the complete folder with the videos, pdfs, etc...
+
+videos/
+images/
+

@@ -1,0 +1,192 @@
+ <div class="react-container page-container">
+    <h2>NPM</h2>
+    <br>
+    cd client<br>
+    npx create-react-app my-app<br>
+    <div class="remark-with-margin-left">
+        npx create-react-app . // The dot means that you want to create the application on this folder(dot is for this folder)<br>
+        I you use <b>my app</b>, you need to do <b>npm start</b> from <b>my app</b>; otherwise you start from <b>client</b><br>
+        is called a boiler-plate
+    </div>
+    <div class="response-with-margin-left">
+        Need to install the following packages:<br>
+        create-react-app@5.1.0<br>
+        Ok to proceed? (y) y<br>
+
+        npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. 
+        Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, 
+        which is much more comprehensive and powerful.<br>
+        npm warn deprecated fstream-ignore@1.0.5: This package is no longer supported.<br>
+        npm warn deprecated uid-number@0.0.6: This package is no longer supported.<br>
+        npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported<br>
+        npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported<br>
+        npm warn deprecated fstream@1.0.12: This package is no longer supported.<br>
+        npm warn deprecated tar@2.2.2: This version of tar is no longer supported, and will not 
+        receive security updates. Please upgrade asap.<br>
+        create-react-app is deprecated.<br>
+
+        You can find a list of up-to-date React frameworks on react.dev<br>
+        For more info see:https://react.dev/link/cra<br>
+
+        This error message will only be shown once per install.<br>
+
+        Creating a new React app in D:\Coding\TestReactNodeMySQL\client\my-app.<br>
+
+        Installing packages. This might take a couple of minutes.<br>
+        Installing react, react-dom, and react-scripts with cra-template...<br>
+
+
+        added 1324 packages in 2m<br>
+
+        268 packages are looking for funding<br>
+        run `npm fund` for details<br>
+
+        Initialized a git repository.<br>
+
+        Installing template dependencies using npm...<br>
+
+        added 18 packages, and changed 1 package in 26s<br>
+
+        268 packages are looking for funding<br>
+        run `npm fund` for details<br>
+        Removing template package using npm...<br>
+
+
+        removed 1 package, and audited 1342 packages in 7s<br>
+
+        268 packages are looking for funding<br>
+        run `npm fund` for details<br>
+    
+        8 vulnerabilities (2 moderate, 6 high)<br>
+
+        To address all issues (including breaking changes), run:<br>
+        npm audit fix --force<br>
+
+        Run `npm audit` for details.<br>
+        Git commit not created Error: Command failed: git commit -m "Initialize project using Create React App"<br>
+            at genericNodeError (node:internal/errors:983:15)<br>
+            at wrappedFn (node:internal/errors:537:14)<br>
+            at checkExecSyncError (node:child_process:882:11)<br>
+            at execSync (node:child_process:954:15)<br>
+            at tryGitCommit (D:\Coding\TestReactNodeMySQL\client\my-app\node_modules\react-scripts\scripts\init.js:62:5)<br>
+            at module.exports (D:\Coding\TestReactNodeMySQL\client\my-app\node_modules\react-scripts\scripts\init.js:350:25)<br>
+            at [eval]:3:14<br>
+            at runScriptInThisContext (node:internal/vm:209:10)<br>
+            at node:internal/process/execution:449:12<br>
+            at [eval]-wrapper:6:24 {<br>
+        status: 128,<br>
+        signal: null,<br>
+        output: [ null, null, null ],<br>
+        pid: 18832,<br>
+        stdout: null,<br>
+        stderr: null<br>
+        }<br>
+        Removing .git directory...<br>
+
+        Success! Created my-app at D:\Coding\TestReactNodeMySQL\client\my-app<br>
+        Inside that directory, you can run several commands:<br>
+
+        npm start<br>
+            Starts the development server.<br>
+
+        npm run build<br>
+            Bundles the app into static files for production.<br>
+
+        npm test<br>
+            Starts the test runner.<br>
+
+        npm run eject<br>
+            Removes this tool and copies build dependencies, configuration files<br>
+            and scripts into the app directory. If you do this, you can’t go back!<br>
+
+        We suggest that you begin by typing:<br>
+
+        cd my-app<br>
+        npm start<br>
+        Happy hacking!<br>
+    </div>
+    cd my-app<br>
+    npm start<br>
+    <div class="response-with-margin-left">
+        You can now view my-app in the browser.<br>
+
+        Local:            http://localhost:3000<br>
+        On Your Network:  http://192.168.182.177:3000<br>
+
+        Note that the development build is not optimized.<br>
+        To create a production build, use npm run build.<br>
+
+        webpack compiled successfully<br>
+    </div>
+</div>
+
+<div class="react-container page-container">
+    <h2>Modifications after creat-react-app</h2>
+    <br>
+    <h3>Erase files in "client > src":</h3>
+    - App.test.js<br>
+    - index.css<br>
+    - logo.svg<br>
+    - reportWebVitals.js<br>
+    - setupTest.js<br>
+    <br>
+    <h3>Keep these files:</h3>
+    - App.css<br>
+    - App.js<br>
+    - index.js<br>
+    <br>
+    <h3>Change code in "index.js":</h3>
+    import React from 'react';<br>
+    import ReactDOM from 'react-dom/client';<br>
+    <span class="erased">import './index.css';</span><br>
+    import App from './App';<br>
+    <span class="erased">import reportWebVitals from './reportWebVitals';</span><br>
+    <br>
+    const root = ReactDOM.createRoot(document.getElementById('root'));<br>
+    root.render(<br>
+    <span class="erased">< React.StrictMode></span><br>
+        < App /><br>
+    <span class="erased">< React.StrictMode></span><br>
+    );<br>
+    <br>
+    <span class="erased">// If you want to start measuring performance in your app, pass a function<br>
+    // to log results (for example: reportWebVitals(console.log))<br>
+    // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals<br>
+    reportWebVitals();</span><br>
+    <br>
+    <h3>Change code in "App.js":</h3>
+    <span class="erased">import logo from './logo.svg';</span><br>
+    import './App.css';<br>
+
+    function App() {
+    return (
+        < div className="App">
+            <span class="erased">< header className="App-header"><br>
+            ...<br>
+            < /header></span><br>
+        < /div><br>
+        );<br>
+    } <br>
+    export default App;<br>     
+</div>
+<div class="react-container page-container">
+    <h2>Start client</h2>
+    <br>
+    If you created <b>client/my app</b>, you need to <b>cd my app</b> and then <b>npm start</b><br>
+    If you created only <b>client</b> (with a "dot"), you need to <b>cd client</b> and then <b>npm start</b>
+</div> 
+
+<div class="react-container page-container">
+    <h2>Dependencies (NPM Packages)</h2>
+    
+    <br>
+    
+
+    <h3>Axios</h3>
+
+    Axios is a promise-based HTTP Client for node.js and the browser. It is isomorphic (= it can run in the 
+    browser and nodejs with the same codebase). On the server-side it uses the native node.js http module, 
+    while on the client (browser) it uses XMLHttpRequests.<br>
+    <br>
+    
+</div>

@@ -1,0 +1,125 @@
+<div class="git-container page-container">
+
+    <p>Open PowerShell and navigate to the folder where the code is located. Then execute all the commands below in order.</p>
+
+    <h2>First time</h2>
+
+    <h3>TL;DR</h3>
+    <p>
+        git init<br>
+        git config --local user.name "FirstnameLastname"<br>
+        git config --local user.email "ma@mail.com"<br>
+        git add --all<br>
+        git commit -m "first commit"<br>
+        git branch -M main<br>
+        git remote add origin https://github.com/{user}/{reponame}.git<br>
+        git push -u origin main<br>
+    </p>
+
+    <h3>Explanation</h3>
+
+    <p>git init</p>
+    <ul class="remark-with-margin-left">
+        <li><b>git</b> → runs git</li>
+        <li><b>init</b> → creates a new, empty Git repository in the current folder, so you can use that folder for version control.</li>
+    </ul>
+    <p>git config --local user.name "FirstnameLastname"<br>
+    git config --local user.email "ma@mail.com"</p>
+    <ul class="remark-with-margin-left">
+        <li><b>config</b> → sets configuration options for Git. These options tell Git things like your identity, editor, merge tools, and other preferences.</li>
+        <li><b>--local</b> → means these settings apply only to the repository you’re currently in. 
+            There are also --global (applies to your user account on the machine) and --system (applies to all users on the system). Setting it locally is useful if you want different 
+            identities for different repositories (for example, work vs personal).</li>
+    </ul>
+    </ul>
+    <p>git add --all</p>
+    <div class="problem-with-margin-left" ondblclick="openAndClose(event)">
+        <div class="problem-title">problem</div>
+        <div class="problem-container closed">
+            <div class="problem-info">
+                warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it<br>
+                warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it<br>
+                warning: in the working copy of 'eslint.config.js', LF will be replaced by CRLF the next time Git touches it<br>
+                warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it<br>
+                ...<br>
+            </div>
+            <hr>
+            <div class="problem-solution">
+                <a href="https://github.com/orgs/community/discussions/66838" target="_blank">&#x1F517; Github</a><br>
+                git config --global core.autocrlf true
+            </div>
+        </div>
+    </div>
+    <ul class="remark-with-margin-left">
+        <li><b>add</b> → stages changes (files) to be committed.</li>
+        <li><b>--all</b> → stages all changes, including new, modified, and deleted files. Even outside the current folder while "git add ." only looks at the current folder and its subfolders.</li>
+    </ul>
+    <p>git commit -m "first commit"</p>
+    <ul class="remark-with-margin-left">
+        <li>Creates a new commit with all files you have staged via "git add" and with the message you capture 
+            a snapshot of your project with a short description.</li>
+        <li><b>commit</b> → records changes in your local repository.</li>
+        <li><b>-m</b> → lets you write a message inline.</li>
+        <li><b>"first commit"</b> → the commit message describing your changes.</li>
+    </ul>
+    <p>git branch -M main</p>
+    <ul class="remark-with-margin-left">
+        <li>Renames the current branch to main, with -M forcing the change.</li>
+        <li><b>branch</b> → used to create, list, rename, or delete branches in your repository.</li>
+        <li><b>-M</b> → stands for “move/rename” and it forces the rename even if a branch with the target name already exists. It’s like a safe overwrite.</li>
+        <li><b>main</b> → the new name you want for the local branch. In many modern Git setups, main is used instead of the old default master.</li>
+    </ul>
+    <p>git remote add origin https://github.com/{user}/{reponame}.git</p>
+    <ul class="remark-with-margin-left">
+        <li>Adds a shortcut (named origin) that points to this GitHub repository URL, so Git knows where to push and pull changes from.</li>
+        <li><b>remote</b> → manage connections to remote repositories.</li>
+        <li><b>add</b> → create a new remote connection.</li>
+        <li><b>origin</b> → the name for that remote (by convention, the main one is called origin).</li>
+        <li><b>URL</b> → the address of the repository on GitHub.</li>
+    </ul>
+    <p>git push -u origin main</p>
+    <ul class="remark-with-margin-left">
+        <li><b>push</b> → uploads your local commits to a remote repository.</li>
+        <li><b>-u</b> → it links your local branch (main) to your remote remote (origin) branch and sets it to default so future git push/git pull can be run without specifying the branch.
+            It tells Git: "Remember that my local branch should track this remote branch."
+        </li>
+    </ul>
+    
+
+
+    <h2>Not first time</h2>
+
+       <h3>TL;DR</h3>
+    <p>
+        git pull<br>
+        git status<br>
+        git add --all<br>
+        git status<br>
+        git commit -m "A short menaingfull message to clarify what changes you made"<br>
+        git push<br>
+    </p>
+
+    <h3>Explanation</h3>
+
+    <p>git pull</p>
+    <ul class="remark-with-margin-left">
+        <li><b>pull</b> → fetches changes from a remote repository and merges them into your current branch.</li>
+        <li><b>git pull origin main</b> → origin and main is not needed because you already set your current branch to an upstream (tracking) branch (git push <b>-u origin main</b>).<br>
+            You need to use it if <b>(1)</b> you haven't set up an upstream yet, <b>(2)</b> you want to pull a different branch than the one you are tracking or <b>(3)</b> you need to be explicit about which remote and branch to pull from.
+        </li>
+    </ul>
+    <p>git status</p>
+    <ul class="remark-with-margin-left">
+        <li><b>status</b> → shows the current state of your repository: <b>(1)</b> which files are staged (ready to commit), <b>(2)</b> which files are modified but not staged,
+            <b>(3)</b> which files are untracked (new files Git isn’t tracking yet) and <b>(4)</b> what branch you’re on and if it’s ahead/behind the remote.
+        </li>
+    </ul>
+    <p>git add --all</p>
+    <p>git status</p>
+    <p>git commit -m "A short menaingfull message to clarify what changes you made"</p>
+    <p>git push</p>
+    <ul class="remark-with-margin-left">
+        <li><b>git push -u origin main</b> → see "git pull" why the "-u origin main" is not always necessary.</li>
+    </ul>
+    
+</div>
