@@ -221,6 +221,10 @@ video:hover, iframe:hover {
     color: var(--green);
 }
 
+.second-ul {
+    margin-left: 30px;
+}
+
 .problem-container {
     color: var(--white);
     padding-left: 10px;

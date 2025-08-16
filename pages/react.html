@@ -1,128 +1,51 @@
  <div class="react-container page-container">
-    <h2>NPM</h2>
-    <br>
-    cd client<br>
-    npx create-react-app my-app<br>
-    <div class="remark-with-margin-left">
-        npx create-react-app . // The dot means that you want to create the application on this folder(dot is for this folder)<br>
-        I you use <b>my app</b>, you need to do <b>npm start</b> from <b>my app</b>; otherwise you start from <b>client</b><br>
-        is called a boiler-plate
-    </div>
-    <div class="response-with-margin-left">
-        Need to install the following packages:<br>
-        create-react-app@5.1.0<br>
-        Ok to proceed? (y) y<br>
-
-        npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. 
-        Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, 
-        which is much more comprehensive and powerful.<br>
-        npm warn deprecated fstream-ignore@1.0.5: This package is no longer supported.<br>
-        npm warn deprecated uid-number@0.0.6: This package is no longer supported.<br>
-        npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported<br>
-        npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported<br>
-        npm warn deprecated fstream@1.0.12: This package is no longer supported.<br>
-        npm warn deprecated tar@2.2.2: This version of tar is no longer supported, and will not 
-        receive security updates. Please upgrade asap.<br>
-        create-react-app is deprecated.<br>
-
-        You can find a list of up-to-date React frameworks on react.dev<br>
-        For more info see:https://react.dev/link/cra<br>
-
-        This error message will only be shown once per install.<br>
-
-        Creating a new React app in D:\Coding\TestReactNodeMySQL\client\my-app.<br>
-
-        Installing packages. This might take a couple of minutes.<br>
-        Installing react, react-dom, and react-scripts with cra-template...<br>
-
-
-        added 1324 packages in 2m<br>
-
-        268 packages are looking for funding<br>
-        run `npm fund` for details<br>
-
-        Initialized a git repository.<br>
-
-        Installing template dependencies using npm...<br>
-
-        added 18 packages, and changed 1 package in 26s<br>
-
-        268 packages are looking for funding<br>
-        run `npm fund` for details<br>
-        Removing template package using npm...<br>
+    <h2>Install</h2>
+    <p>cd client (for a CRUD app)<br>
+       cd folder (for only a React app)</p> 
+    <p>npx create-vite</p>
+    <ul class="remark-with-margin-left">
+        <li><b>Project name:</b>
+            <ul class="second-ul">
+                <li>You can type a "." (dot) to keep the name of your folder that you already created. This is recommended by Vite.</li>
+                <li>If you give another name, Vite uses this name to create the folder.</li>
+                <li>If the folder has files already, Vite will give a warning</li>
+            </ul>
+        </li>    
+    </ul>
+    <ul class="remark-with-margin-left">
+        <li><b>Package name:</b>
+            <ul class="second-ul">
+                <li>You have to type the full name of the folder.  A "." (dot) is not enough.</li>
+                <li>This is the name that will be stored in your package.json under name.</li>
+                <li>It is the identification of your project for npm, Node.js and package management tools.</li>
+                <li>It must be lowercase without spaces; "-" and "_" are allowed.</li>
+            </ul>
+        </li>    
+    </ul>
+    <ul class="remark-with-margin-left">
+        <li><b>Select a framework:</b>
+        </li>    
+    </ul>
+    <ul class="remark-with-margin-left">
+        <li><b>Select a variant:</b>
+        </li>    
+    </ul>
+    <p>npm install</p>
+    <ul class="remark-with-margin-left">
+        <li>This will install the folder "node_modules" in your project folder.</b>
+        </li>    
+    </ul>
+    <p>npm run dev</p>
+     <ul class="remark-with-margin-left">
+        <li>Take the localhost url to see the app.</b>
+        </li>    
+    </ul>
 
 
-        removed 1 package, and audited 1342 packages in 7s<br>
-
-        268 packages are looking for funding<br>
-        run `npm fund` for details<br>
-    
-        8 vulnerabilities (2 moderate, 6 high)<br>
-
-        To address all issues (including breaking changes), run:<br>
-        npm audit fix --force<br>
-
-        Run `npm audit` for details.<br>
-        Git commit not created Error: Command failed: git commit -m "Initialize project using Create React App"<br>
-            at genericNodeError (node:internal/errors:983:15)<br>
-            at wrappedFn (node:internal/errors:537:14)<br>
-            at checkExecSyncError (node:child_process:882:11)<br>
-            at execSync (node:child_process:954:15)<br>
-            at tryGitCommit (D:\Coding\TestReactNodeMySQL\client\my-app\node_modules\react-scripts\scripts\init.js:62:5)<br>
-            at module.exports (D:\Coding\TestReactNodeMySQL\client\my-app\node_modules\react-scripts\scripts\init.js:350:25)<br>
-            at [eval]:3:14<br>
-            at runScriptInThisContext (node:internal/vm:209:10)<br>
-            at node:internal/process/execution:449:12<br>
-            at [eval]-wrapper:6:24 {<br>
-        status: 128,<br>
-        signal: null,<br>
-        output: [ null, null, null ],<br>
-        pid: 18832,<br>
-        stdout: null,<br>
-        stderr: null<br>
-        }<br>
-        Removing .git directory...<br>
-
-        Success! Created my-app at D:\Coding\TestReactNodeMySQL\client\my-app<br>
-        Inside that directory, you can run several commands:<br>
-
-        npm start<br>
-            Starts the development server.<br>
-
-        npm run build<br>
-            Bundles the app into static files for production.<br>
-
-        npm test<br>
-            Starts the test runner.<br>
-
-        npm run eject<br>
-            Removes this tool and copies build dependencies, configuration files<br>
-            and scripts into the app directory. If you do this, you can’t go back!<br>
-
-        We suggest that you begin by typing:<br>
-
-        cd my-app<br>
-        npm start<br>
-        Happy hacking!<br>
-    </div>
-    cd my-app<br>
-    npm start<br>
-    <div class="response-with-margin-left">
-        You can now view my-app in the browser.<br>
-
-        Local:            http://localhost:3000<br>
-        On Your Network:  http://192.168.182.177:3000<br>
-
-        Note that the development build is not optimized.<br>
-        To create a production build, use npm run build.<br>
-
-        webpack compiled successfully<br>
-    </div>
-</div>
 
 <div class="react-container page-container">
     <h2>Modifications after creat-react-app</h2>
-    <br>
+
     <h3>Erase files in "client > src":</h3>
     - App.test.js<br>
     - index.css<br>

@@ -15,7 +15,6 @@ async function fillVideos() {
         language.textContent = v.lang;
 
         let mediaContainer = document.createElement("div");
-        //mediaContainer.className = "video-container";
 
         // Build local path
         let localPath = `videos/${v.title}.${v.ext}`;
@@ -39,6 +38,7 @@ async function fillVideos() {
             video.appendChild(source);
 
             mediaContainer.appendChild(video);
+
         } else if (v.website === "youtube" && v.webId) {
             let iframe = document.createElement("iframe");
             iframe.src = `https://www.youtube.com/embed/${v.webId}`;
@@ -92,64 +92,3 @@ hamburger.addEventListener('click', () => {
 });
 
 
-/*
-
-async function fillLibrary() {
-
-   
-
-    // because we take the date from a json file and not a hardcoded variable 'var videos"
-    const response = await fetch("data/videos.json");
-
-    const videos = await response.json();
- 
-    
-    const libraryVideos = document.querySelector("#library-videos");
-    console.log(typeof libraryVideos)
-    libraryVideos.innerHTML = "";
-
-    for (let v of videos) {
-
-        let website
-        if (v.website == "youtube") {
-            website = "https://www.youtube.com/watch?v="
-        }
-
-        let libraryBox = document.createElement("div");
-        libraryBox.setAttribute("id", v.id);
-        libraryBox.setAttribute("class", "library-box");
-
-        let language = document.createElement("div");
-        language.setAttribute("class", "video-language");
-        language.innerHTML = v.lang;
-
-        let video = document.createElement("video");
-        video.setAttribute("controls", true);
-
-        let source = document.createElement("source");
-        source.setAttribute("src", "library/" + v.title + "." + v.ext);
-        source.setAttribute("type", "video/mp4");
-
-        let title = document.createElement("div");
-        title.setAttribute("class", "video-title");
-        title.innerHTML = v.title;
-
-        let info = document.createElement("div");
-        info.innerHTML = `<a href=${website}${v.webId} target="_blank">Online</a> | ${v.info}`;
-
-        let remark = document.createElement("div");
-        remark.setAttribute("class", "remark");
-        remark.innerHTML = v.remark;
-
-        video.appendChild(source);
-
-        libraryBox.appendChild(language);
-        libraryBox.appendChild(video);
-        libraryBox.appendChild(title);
-        libraryBox.appendChild(info);
-        libraryBox.appendChild(remark);
-
-        libraryVideos.appendChild(libraryBox);
-    } 
-}
-*/
