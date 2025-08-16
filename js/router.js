@@ -12,8 +12,8 @@ const routes = {
 };
 
 const pageTitles = {
-  "/": "",
-  "/Home": "", 
+  "/": "Home",
+  "/Home": "Home", 
   "/videos": "Videos",
   "/powershell": "PowerShell",
   "/git": "Git",
