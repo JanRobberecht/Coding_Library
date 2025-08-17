@@ -140,6 +140,10 @@ header {
     display: flex;
 }
 
+.navigation #home-nav {
+    display: block
+}
+
 /* LIBRARY / VIDEOS - mobile-first flex */
 .videos-container {
     display: flex;
@@ -326,6 +330,10 @@ video:hover, iframe:hover {
         display: inline-block;
         padding: 0 10px;
     }
+
+    .navigation #home-nav {
+    display: none;
+}
 
     /* Library boxes side by side */
     .videos-container {

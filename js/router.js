@@ -13,7 +13,7 @@ const routes = {
 
 const pageTitles = {
   "/": "Home",
-  "/Home": "Home", 
+  "/home": "Home", 
   "/videos": "Videos",
   "/powershell": "PowerShell",
   "/git": "Git",
