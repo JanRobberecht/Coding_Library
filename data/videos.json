@@ -48,5 +48,15 @@
     "webId": "3OqiKTyH4r0",
     "info": "PedroTech | 2025-04",
     "remark": ""
+  },
+  {
+    "id": "vid0006",
+    "title": "How To Deploy A React Vite App To Github Pages (Simple)",
+    "lang": "React, Github",
+    "ext": "mp4",
+    "website": "youtube",
+    "webId": "hn1IkJk24ow",
+    "info": "PedroTech | 2025-01",
+    "remark": "Change also the branche on Github (settings > pages) from main to gh-pages."
   }
 ]
